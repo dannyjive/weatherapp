@@ -1,0 +1,332 @@
+@font-face {
+  font-family: "Timeburner";
+  src: url(timeburnernormal.ttf);
+}
+
+.body {
+  background-color: rgba(63, 62, 60, 60);
+  margin: 0 auto;
+  font-family: "Timeburner", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.navbar {
+  background-color: rgba(27, 27, 27, 0.7);
+  box-shadow: 0 8px 16px 0 rgba(3, 3, 3, 0.488);
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.app-container {
+  text-align: center;
+  justify-content: center;
+  position: fixed;
+}
+
+input#cityInput {
+  font-size: 16px;
+  width: 70%;
+  border: none;
+  margin-right: 10px;
+}
+
+button#searchButton {
+  padding: 5px;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: transparent;
+  color: grey;
+  border: none;
+  border-radius: 5px;
+}
+
+button#searchButton:hover {
+  background-color: #5f5f5f;
+}
+
+/* THE CROSS BUTTON */
+
+.cross-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background-color: grey;
+  color: white;
+  font-size: 56px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 10px auto;
+  font-family: san-serif;
+  box-shadow: 0 0 10px rgba(3, 3, 3, 0.648);
+}
+
+.cross-button:hover {
+  background-color: #2c2d2e;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 15px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 100px; /* Adjust this value based on the height of your navbar */
+  padding: 50px;
+}
+
+/* WEATHER CARDS */
+
+.card {
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  position: relative;
+  text-align: center;
+  font-family: "Timeburner", sans-serif;
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), url(img/sun.jpeg); */
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  width: 160px;
+  height: 210px;
+  z-index: 1;
+}
+
+.card h3 {
+  margin: 0;
+  font-weight: normal;
+  font-size: 22px;
+}
+
+#modalcontent {
+  background-color: #363c4a;
+}
+
+#main-temp {
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 0.5;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+#high-low-temp {
+  font-size: 20px;
+  padding-bottom: 40px;
+  font-kerning: none;
+}
+
+/* DETAILED WEATHER CARDS */
+
+.forecast-wrapper,
+.hourly-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  width: 100%;
+  overflow: auto;
+  height: auto;
+}
+
+.modal-header {
+  text-align: center;
+  justify-content: center;
+  background-color: #141515;
+  background-clip: content-box;
+  border: none;
+  border-radius: 15px;
+}
+
+.modal-title {
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+}
+
+.headlines {
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
+
+.scroll-button {
+  position: absolute;
+  top: 30%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.scroll-button.left {
+  left: 10px;
+}
+
+.scroll-button.right {
+  right: 10px;
+}
+
+.forecast-cards,
+.hourly-forecast {
+  display: flex;
+  overflow: hidden;
+  gap: 30px;
+  scroll-behavior: smooth;
+  height: 250px;
+  width: 50em;
+}
+
+.forecast-card,
+.hourly-card {
+  flex-shrink: 0;
+  width: 150px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 16px 32px black;
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(122 157 190);
+}
+
+.forecast-card img,
+.hourly-card img {
+  width: 50px;
+  height: 50px;
+}
+
+.modal-dialog {
+  display: flex;
+  justify-content: center;
+}
+
+#modalcontent {
+  display: flex;
+  justify-content: center;
+  width: 100vh;
+  height: 80vh;
+}
+
+/* For Small Screens */
+@media (max-width: 480px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* For Medium Screens */
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: -1px;
+  right: 0px;
+  background-color: rgb(94, 94, 94);
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*border-radius: 1.5rem; Bootstrap rounded-4 equivalent */
+  /* overflow: hidden; */
+  clip-path: polygon(
+    47.14% 0%,
+    61.62% 0%,
+    78.19% 2.47%,
+    91.42% 9.11%,
+    98.71% 21.84%,
+    100% 41.79%,
+    100% 60.39%,
+    100% 74.53%,
+    100% 100%,
+    0% 0%
+  );
+  /*clip-path: polygon(100% 0%, 100% 100%, 0% 0%);
+    transform: rotate(90deg); */
+  z-index: 10;
+}
+
+.close-button:hover {
+  background-color: rgb(106, 25, 25);
+}
+
+.footer {
+  align-content: center;
+  text-align: center;
+  position: fixed;
+  font-weight: bold;
+  color: rgba(27, 27, 27, 27);
+  font-size: 16px;
+  font-family: "Timeburner", sans-serif;
+  color: white;
+  background-color: rgba(27, 27, 27, 0.7)
+}
+
+.footer a {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/*about us styles*/
+.vertical-line {
+  width: 2px;
+  height: 100px;
+  background-color: #ffffff;
+  margin: 0 auto;
+  transform: rotate(180deg);
+}
+
+.section1 {
+  display: flex;
+  align-items: flex-start;
+}
+
+.section2 {
+  float: left;
+  width: 350px;
+}
+
+.rainbowlogobanner img {
+  flex: 0 0 auto;
+  margin: 0 40px 40px 0;
+  border-radius: 10px;
+  float: left;
+}
+
+.text-content {
+  flex: 1;
+  margin-top: 40px;
+}

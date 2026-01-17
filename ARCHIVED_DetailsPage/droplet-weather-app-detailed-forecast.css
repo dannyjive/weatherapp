@@ -1,0 +1,111 @@
+@font-face {
+    font-family: 'Timeburner';
+    src: url(timeburnernormal.ttf);
+}
+
+body {
+    font-family: 'Timeburner', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #484848;
+    color: white;
+  }
+
+.navbar {
+  background-color: #141b25e4;
+  font-family: 'Timeburner', sans-serif;
+  box-shadow: 0 4px 8px black;
+}
+
+  .card-container {
+    font-family: 'Timeburner', sans-serif;
+    max-width: 1200px;
+    text-align: center;
+    color: white;
+    margin-top: 8em;
+  }
+  
+  .forecast-wrapper, .hourly-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    overflow: auto;
+    height: auto;
+  }
+  
+  h1, h2 {
+    padding-bottom: 20px;
+  }
+
+  .scroll-button {
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  .scroll-button.left {
+    left: 10px;
+  }
+  
+  .scroll-button.right {
+    right: 10px;
+  }
+  
+  .forecast-cards, .hourly-forecast {
+    display: flex;
+    overflow: hidden;
+    gap: 30px;
+    scroll-behavior: smooth;
+    height: 250px;
+    width: 50em;
+  }
+  
+  .forecast-card, .hourly-card {
+    flex-shrink: 0;
+    width: 150px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 16px 32px black;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .forecast-card img, .hourly-card img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .search-bar {
+    margin-top: 20px;
+  }
+  
+  #city-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #search-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #search-button:hover {
+    background-color: #0056b3;
+  }
